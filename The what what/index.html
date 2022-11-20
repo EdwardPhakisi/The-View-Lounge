@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="logo\logo.png" />
+    <title>This is The View Lounge Bar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#logoimg{
+        vertical-align: middle;
+      }
+
+      li{
+        
+        float: right;
+        list-style-type:none;
+        list-style-position: inherit; 
+        overflow:hidden;
+        margin:15%;
+        margin-top:1%;
+        margin-left: 0;
+        text-decoration: none;
+
+      }
+      #logo{
+        text-align: center;
+        width: 100%;
+        background-color:whitesmoke;
+      }
+      #headnav{
+        text-align: center;
+        background-color: black;
+        width: 100%;
+        height: 40px;
+        animation-name: fading;
+          animation-duration: 4s;
+          animation-iteration-count: 100;
+      }
+      @keyframes fading {
+        0%   {background-color: black; }
+        25%  {background-color:dimgrey;}
+        50%  {background-color:black;}
+        100%  {background-color:dimgrey;}  
+      }
+      a{
+        text-decoration: none;
+        color:whitesmoke; 
+      }
+      a:hover{
+        text-decoration: none;
+        font-size: 20px;
+        color: whitesmoke ;
+        transition: all 0.3s ease;
+      }
+      a:visited {
+        text-decoration: none;
+      }
+
+
+
+.mySlides {display: none;}
+.images {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  margin-top: 0.0005%;
+
+}
+
+.main {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+
+
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  0% {opacity: .3}
+  25%{opacity: .6}
+  50%{opacity: .8} 
+  100% {opacity: 1}
+}
+
+</style>
+</head>
+<body>
+
+<div style="width: 100%;">
+        <div id="logo" >
+          <img id="logoimg"  src="logo\logo.png">
+        </div>
+        <div id="headnav">
+            <li><a href="Contact.html">contact</a></li>
+            <li><a href="Appointment.html">Get Something</a></li>
+            <li><a href="ABOUT US.html">About Us</a></li>
+            <li><a href="HOME.html">Home</a></li>
+        </div>
+      </div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+          <img class="images" src="images\cocktail.jpg">
+        </div>
+        <div class="mySlides fade">
+          <img class="images" src="images\dagwood.jpg">
+        </div>
+        <div class="mySlides fade">
+          <img class="images" src="images\double beef.jpg">
+        </div>
+        <div class="mySlides fade">
+          <img class="images" src="images\ribs.jpg">
+        </div>
+        <div class="mySlides fade">
+          <img class="images" src="images\smash cheese.jpg">
+        </div>
+        <div class="mySlides fade">
+          <img class="images" src="images\wedges.jpg">
+        </div>
+ 
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center;display: none;">
+  <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html> 
